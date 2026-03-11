@@ -1,0 +1,187 @@
+<!<<<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מבדק ערבית מסכם: השיר והמשפטים</title>
+    <style>
+        :root { --primary: #1a73e8; --bg: #f8f9fa; --text: #3c4043; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1, h2 { color: var(--primary); text-align: center; }
+        
+        .lyrics-section { background: #fffef0; padding: 20px; border: 1px dashed #d4af37; border-radius: 10px; margin-bottom: 30px; line-height: 1.8; text-align: center; font-size: 1.1rem; }
+        
+        .question { margin-bottom: 25px; padding: 20px; background: #fff; border: 1px solid #eee; border-radius: 10px; border-right: 5px solid var(--primary); }
+        .options { list-style: none; padding: 0; margin-top: 15px; }
+        .options li { margin: 8px 0; padding: 12px; background: #f1f3f4; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        .options li:hover { background: #e8f0fe; }
+        .options input { margin-left: 10px; cursor: pointer; }
+
+        .btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: bold; margin-top: 20px; }
+        #result-screen { display: none; text-align: center; }
+        .code-box { background: #eee; padding: 15px; border: 2px solid #333; margin: 20px 0; font-family: monospace; font-size: 1.2rem; cursor: pointer; }
+        .locked-msg { color: red; font-weight: bold; text-align: center; font-size: 1.3rem; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<div id="main-content" class="container">
+    <h1>מבדק ערבית: "אלבית אלעתיק" ומשפטי מפתח</h1>
+
+    <div class="lyrics-section">
+        <h3>מילות השיר "אלבית (א)לעתיק" [cite: 81-109]</h3>
+        רְיַאד וּוַלִיד טִלְעוּ עַ-טַרִיק (2x)<br>
+        א(ל)סִיעָה תַלַאתָה (2x) פִי (א)לְבֵּית (א)לְעַתִיק<br>
+        קַדִישׁ (אל)סִיעַה? תִנְתֵין וּנֵס וּחַ'מְסָה<br>
+        שֶׁפְת רְיַאד וּוַלִיד טְלְעוּ מִן (א)לְמַדְרַסֶה<br>
+        קַדִישׁ (אל)סִיעַה? תַלַאתָה אִלֹא תֵלֶת<br>
+        רֵחְנָא עַלַא (א)לְבֵּית (א)לְעַתִיק, בַּטִיחַ'ה מַעֲנָא וּחַ'סַה<br>
+        קַדִישׁ (אל)סִיעַה? תַלַאתֶה בּ(אל)זַבּט<br>
+        קַדִישׁ (אל)סִיעַה? תַלַאתָה אִלֹא רֶבַּע<br>
+        שֶׁפְת רִיאַד וּוַלִיד ראחוּ בַּעִיד בַּעִיד<br>
+        ו(א)לְבּוַאבּ מְסַכְּרָה [cite: 81-109]
+    </div>
+
+    <input type="text" id="studentName" placeholder="הקלידו שם מלא לפני תחילת המבדק" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+
+    <div id="questions-area">
+        <div class="question" id="q1">
+            <p><strong>1. תרגמו לתעתיק: "ריאד ווליד הלכו בדרך" [cite: 113]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="10"> רְיַאד וּוַלִיד טִלְעוּ עַ-טַרִיק</label><br>
+                <label><input type="radio" name="q1" value="0"> רְיַאד וּוַלִיד טְלְעוּ מִן (א)לְמַדְרַסֶה</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>2. תרגמו לתעתיק: "השעה שלוש בדיוק" [cite: 114]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="0"> א(ל)סִיעָה תַלַאתָה אִלֹא רֶבַּע</label><br>
+                <label><input type="radio" name="q2" value="10"> א(ל)סִיעָה תַלַאתֶה בּ(אל)זַבּט</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>3. תרגמו לתעתיק: "יש איתנו אבטיח וחסה" [cite: 115]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="10"> בַּטִיחַ'ה מַעֲנָא וּחַ'סַה</label><br>
+                <label><input type="radio" name="q3" value="0"> שֶׁפְת רְיַאד וּוַלִיד</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>4. תרגמו לתעתיק: "הדלת סגורה" [cite: 116]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="0"> (א)לְבֵּית (א)לְעַתִיק</label><br>
+                <label><input type="radio" name="q4" value="10"> ו(א)לְבּוַאבּ מְסַכְּרָה</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>5. תרגמו לתעתיק: "הלכו רחוק רחוק" [cite: 117]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="10"> ראחוּ בַּעִיד בַּעִיד</label><br>
+                <label><input type="radio" name="q5" value="0"> טִלְעוּ עַ-טַרִיק</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>6. תרגמו לתעתיק: "הילדים יצאו מבית הספר" [cite: 118]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="10"> טְלְעוּ מִן (א)לְמַדְרַסֶה</label><br>
+                <label><input type="radio" name="q6" value="0"> רֵחְנָא עַלַא (א)לְבֵּית (א)לְעַתִיק</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>7. תרגמו לתעתיק: "ראיתי את ריאד ווליד" [cite: 119]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="10"> שֶׁפְת רְיַאד וּוַלִיד</label><br>
+                <label><input type="radio" name="q7" value="0"> רְיַאד וּוַלִיד טִלְעוּ</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>8. תרגמו לתעתיק: "השעה רבע ל-3" [cite: 120]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="10"> א(ל)סִיעָה תַלַאתָה אִלֹא רֶבַּע</label><br>
+                <label><input type="radio" name="q8" value="0"> תַלַאתָה אִלֹא תֵלֶת</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>9. תרגמו לתעתיק: "הבית הישן" [cite: 122]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="10"> (א)לְבֵּית (א)לְעַתִיק</label><br>
+                <label><input type="radio" name="q9" value="0"> (א)לְמַדְרַסֶה (א)לְעַתִיק</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p><strong>10. תרגמו לתעתיק: "הלכנו לבית הישן" [cite: 123]</strong></p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="10"> רֵחְנָא עַלַא (א)לְבֵּית (א)לְעַתִיק</label><br>
+                <label><input type="radio" name="q10" value="0"> טְלְעוּ עַ-טַרִיק</label>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn" id="finishBtn" onclick="submitFinalQuiz()">סיים מבדק וקבל קוד</button>
+</div>
+
+<div id="result-screen" class="container">
+    <h2>המבדק הושלם!</h2>
+    <p>העתיקו את הקוד שמתחת והדביקו אותו בתגובה הפרטית בגוגל קלאסרום:</p>
+    <div class="code-box" id="outputCode" title="לחצו להעתקה" onclick="copyCode()"></div>
+    <p><strong>לתשומת לבכם:</strong> לא ניתן לענות שוב על המבדק.</p>
+</div>
+
+<script>
+    // מניעת ניסיונות חוזרים באמצעות localStorage
+    window.onload = function() {
+        const existingResult = localStorage.getItem('quiz_result_arabic');
+        if (existingResult) {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            document.getElementById('outputCode').innerText = existingResult;
+        }
+    };
+
+    function submitFinalQuiz() {
+        const name = document.getElementById('studentName').value.trim();
+        if (!name) {
+            alert("אנא הקלידו שם מלא!");
+            return;
+        }
+
+        let score = 0;
+        for (let i = 1; i <= 10; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected) {
+                score += parseInt(selected.value);
+            }
+        }
+
+        const timestamp = new Date().toLocaleTimeString();
+        const codeString = `RESULT | שם: ${name} | ציון: ${score} | זמן: ${timestamp}`;
+        
+        // שמירת התוצאה
+        localStorage.setItem('quiz_result_arabic', codeString);
+        
+        // הצגת המסך הסופי
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('result-screen').style.display = 'block';
+        document.getElementById('outputCode').innerText = codeString;
+    }
+
+    function copyCode() {
+        const codeText = document.getElementById('outputCode').innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+            alert("הקוד הועתק! הדביקו אותו בגוגל קלאסרום.");
+        });
+    }
+</script>
+
+</body>
+</html>
